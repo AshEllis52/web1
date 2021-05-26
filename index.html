@@ -8,15 +8,19 @@
 let doIt=()=>{
   let tab=document.getElementById("tab1");
   let rows=tab1.getElementsByTagName('tr');
-  fetch('https://ashdb.dbsprojects.ie:8080/')
+  fetch('https://https://ash.dbsprojects.ie:8080/tsla')
     .then(response => response.json())
     .then(data=>data.Results.forEach(  //.slice(0,3)
       x=>{
         let newRow=rows[0].cloneNode(true);
         let divs=newRow.getElementsByTagName('td');
-        divs[0].innerHTML=x['ID'];
-        divs[1].innerHTML=x['Name'];
-        divs[2].innerHTML=x['Email'];
+        divs[0].innerHTML=x['Date'];
+        divs[1].innerHTML=x['Open'];
+        divs[2].innerHTML=x['High'];
+        divs[3].innerHTML=x['Low'];
+        divs[4].innerHTML=x['Close'];
+        divs[5].innerHTML=x['Adj Close'];
+        divs[6].innerHTML=x['Volume'];
         tab1.appendChild(newRow);
       }
     )
@@ -28,6 +32,6 @@ let doIt=()=>{
 <button onClick="doIt()">Press me</button>
 This is where the results turn up: <br/>
 <table id='tab1' bgcolor='blue'>
-<tr><td>ID</td><td>Name</td><td>Email</td></tr>
+<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
 </table></body>
 </html>
