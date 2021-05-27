@@ -26,12 +26,118 @@ let doIt=()=>{
     )
   );
 }
+let doIt1=()=>{
+  let tab=document.getElementById("tab2");
+  let rows=tab1.getElementsByTagName('tr');
+  fetch('https://ash.dbsprojects.ie:8080/tsla')
+    .then(response => response.json())
+    .then(data=>data.Results.forEach(  //.slice(0,3)
+      x=>{
+        let newRow=rows[0].cloneNode(true);
+        let divs=newRow.getElementsByTagName('td');
+        divs[0].innerHTML=x['Date'];
+        divs[1].innerHTML=x['Open'];
+        divs[2].innerHTML=x['High'];
+        divs[3].innerHTML=x['Low'];
+        divs[4].innerHTML=x['Close'];
+        divs[5].innerHTML=x['Adj Close'];
+        divs[6].innerHTML=x['Volume'];
+        tab1.appendChild(newRow);
+      }
+    )
+  );
+}
+let doIt2=()=>{
+  let tab=document.getElementById("tab3");
+  let rows=tab1.getElementsByTagName('tr');
+  fetch('https://ash.dbsprojects.ie:8080/ba')
+    .then(response => response.json())
+    .then(data=>data.Results.forEach(  //.slice(0,3)
+      x=>{
+        let newRow=rows[0].cloneNode(true);
+        let divs=newRow.getElementsByTagName('td');
+        divs[0].innerHTML=x['Date'];
+        divs[1].innerHTML=x['Open'];
+        divs[2].innerHTML=x['High'];
+        divs[3].innerHTML=x['Low'];
+        divs[4].innerHTML=x['Close'];
+        divs[5].innerHTML=x['Adj Close'];
+        divs[6].innerHTML=x['Volume'];
+        tab1.appendChild(newRow);
+      }
+    )
+  );
+}
+let doIt3=()=>{
+  let tab=document.getElementById("tab4");
+  let rows=tab1.getElementsByTagName('tr');
+  fetch('https://ash.dbsprojects.ie:8080/gold')
+    .then(response => response.json())
+    .then(data=>data.Results.forEach(  //.slice(0,3)
+      x=>{
+        let newRow=rows[0].cloneNode(true);
+        let divs=newRow.getElementsByTagName('td');
+        divs[0].innerHTML=x['Date'];
+        divs[1].innerHTML=x['Open'];
+        divs[2].innerHTML=x['High'];
+        divs[3].innerHTML=x['Low'];
+        divs[4].innerHTML=x['Close'];
+        divs[5].innerHTML=x['Adj Close'];
+        divs[6].innerHTML=x['Volume'];
+        tab1.appendChild(newRow);
+      }
+    )
+  );
+}
+let doIt4=()=>{
+  let tab=document.getElementById("tab5");
+  let rows=tab1.getElementsByTagName('tr');
+  fetch('https://ash.dbsprojects.ie:8080/dog')
+    .then(response => response.json())
+    .then(data=>data.Results.forEach(  //.slice(0,3)
+      x=>{
+        let newRow=rows[0].cloneNode(true);
+        let divs=newRow.getElementsByTagName('td');
+        divs[0].innerHTML=x['Date'];
+        divs[1].innerHTML=x['Open'];
+        divs[2].innerHTML=x['High'];
+        divs[3].innerHTML=x['Low'];
+        divs[4].innerHTML=x['Close'];
+        divs[5].innerHTML=x['Adj Close'];
+        divs[6].innerHTML=x['Volume'];
+        tab1.appendChild(newRow);
+      }
+    )
+  );
+}
 </script>
 </head>
 <body>
+  
 <button onClick="doIt()">Press me</button>
-This is where the results turn up: <br/>
+To see historical Apple Data: <br/>
 <table id='tab1' bgcolor='white'>
-<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
-</table></body>
+</table>
+
+<button onClick="doIt1()">Press me</button>
+To see historical Tesla Data: <br/>
+<table id='tab2' bgcolor='white'>
+</table>
+  
+<button onClick="doIt2()">Press me</button>
+To see historical Boeing Data: <br/>
+<table id='tab3' bgcolor='white'>
+  
+<button onClick="doIt3()">Press me</button>
+To see historical Gold Data: <br/>
+<table id='tab4' bgcolor='white'>
+</table>
+  
+<button onClick="doIt4()">Press me</button>
+To see historical Dogecoin Data: <br/>
+<table id='tab5' bgcolor='white'>
+</table>
+  
+</table>
+</body>
 </html>
