@@ -28,13 +28,13 @@ let doIt=()=>{
 }
 let doIt1=()=>{
   let tab=document.getElementById("tab2");
-  let rows=tab1.getElementsByTagName('tr1');
+  let rows=tab1.getElementsByTagName('tr');
   fetch('https://ash.dbsprojects.ie:8080/tsla')
     .then(response => response.json())
     .then(data=>data.Results.forEach(  //.slice(0,3)
       x=>{
         let newRow=rows[0].cloneNode(true);
-        let divs=newRow.getElementsByTagName('td1');
+        let divs=newRow.getElementsByTagName('td');
         divs[0].innerHTML=x['Date'];
         divs[1].innerHTML=x['Open'];
         divs[2].innerHTML=x['High'];
@@ -121,7 +121,7 @@ To see historical Apple Data: <br/>
 <button onClick="doIt1()">Press me</button>
 To see historical Tesla Data: <br/>
 <table id='tab2' bgcolor='white'>
-<tr1><td1>Date</td1><td1>Open</td1><td1>High</td1><td1>Low</td1><td1>Close</td1><td1>Adj Close</td1><td1>Volume</td1></tr1>
+<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
 </table>
 <button onClick="doIt2()">Press me</button>
 To see historical Boeing Data: <br/>
@@ -132,13 +132,13 @@ To see historical Boeing Data: <br/>
 <button onClick="doIt3()">Press me</button>
 To see historical Gold Data: <br/>
 <table id='tab4' bgcolor='white'>
-<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
+#<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
 </table>
   
 <button onClick="doIt4()">Press me</button>
 To see historical Dogecoin Data: <br/>
 <table id='tab5' bgcolor='white'>
-<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
+#<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
 </table>
   
 </body>
