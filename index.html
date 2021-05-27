@@ -26,17 +26,15 @@ let doIt=()=>{
     )
   );
 }
-</script>
-<script>
 let doIt1=()=>{
   let tab=document.getElementById("tab2");
-  let rows=tab1.getElementsByTagName('tr');
+  let rows=tab1.getElementsByTagName('tr1');
   fetch('https://ash.dbsprojects.ie:8080/tsla')
     .then(response => response.json())
     .then(data=>data.Results.forEach(  //.slice(0,3)
       x=>{
         let newRow=rows[0].cloneNode(true);
-        let divs=newRow.getElementsByTagName('td');
+        let divs=newRow.getElementsByTagName('td1');
         divs[0].innerHTML=x['Date'];
         divs[1].innerHTML=x['Open'];
         divs[2].innerHTML=x['High'];
@@ -49,8 +47,6 @@ let doIt1=()=>{
     )
   );
 }
-</script>
-<script>
 let doIt2=()=>{
   let tab=document.getElementById("tab3");
   let rows=tab1.getElementsByTagName('tr');
@@ -72,8 +68,6 @@ let doIt2=()=>{
     )
   );
 }
-</script>
-<script>
 let doIt3=()=>{
   let tab=document.getElementById("tab4");
   let rows=tab1.getElementsByTagName('tr');
@@ -95,8 +89,6 @@ let doIt3=()=>{
     )
   );
 }
-</script>
-<script>
 let doIt4=()=>{
   let tab=document.getElementById("tab5");
   let rows=tab1.getElementsByTagName('tr');
@@ -121,19 +113,16 @@ let doIt4=()=>{
 </script>
 </head>
 <body>
-  
 <button onClick="doIt()">Press me</button>
 To see historical Apple Data: <br/>
 <table id='tab1' bgcolor='white'>
 <tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
 </table>
-
 <button onClick="doIt1()">Press me</button>
 To see historical Tesla Data: <br/>
 <table id='tab2' bgcolor='white'>
-<tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
+<tr1><td1>Date</td1><td1>Open</td1><td1>High</td1><td1>Low</td1><td1>Close</td1><td1>Adj Close</td1><td1>Volume</td1></tr1>
 </table>
-  
 <button onClick="doIt2()">Press me</button>
 To see historical Boeing Data: <br/>
 <tr><td>Date</td><td>Open</td><td>High</td><td>Low</td><td>Close</td><td>Adj Close</td><td>Volume</td></tr>
