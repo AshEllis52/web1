@@ -12,16 +12,7 @@ let doIt=()=>{
     .then(response => response.json())
     .then(data=>data.Results.forEach(  //.slice(0,3)
       x=>{
-        let newRow=rows[0].cloneNode(true);
-        let divs=newRow.getElementsByTagName('td');
-        divs[0].innerHTML=x['Date'];
-        divs[1].innerHTML=x['Open'];
-        divs[2].innerHTML=x['High'];
-        divs[3].innerHTML=x['Low'];
-        divs[4].innerHTML=x['Close'];
-        divs[5].innerHTML=x['Adj Close'];
-        divs[6].innerHTML=x['Volume'];
-        tab1.appendChild(newRow);
+       
       }
     )
   );
